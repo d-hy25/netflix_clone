@@ -1,0 +1,21 @@
+@mixin button-style{
+  background-color: $primary-color;
+  color: $txt-color;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+  &:hover{
+    // background-color: $hover-color;
+    filter: brightness(0.6);
+  }
+}
+@mixin component_size{
+  width: 60%;
+  margin: 0 auto;
+}
+
+@mixin responsive($breakpoint){
+  @media screen and (max-width: $breakpoint){
+    @content;
+  }
+}

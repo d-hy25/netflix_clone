@@ -1,0 +1,79 @@
+header{
+  height: 90vh;
+  background-image: 
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url(../../public/images/nexflix-bg.png);
+  background-position: top center;
+}
+nav{
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include responsive($breakpoint-medium){
+    width: 95%;
+  }
+  h1{
+    color: $primary-color;
+    font-size: $font-size-large;
+  }
+  div{
+    select{
+      padding: 7px 20px;
+      margin-right: 10px;
+      background-color: transparent;
+      color: $txt-color;
+      border-radius: 5px;
+      option{
+        background-color: #fff;
+        color: #000;
+      }
+    }
+    button{
+      @include button-style;
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+  }
+}
+.header-contents{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  h2{
+    font-size: 64px;
+    margin-bottom: 20px;
+    @include responsive($breakpoint-medium){
+      font-size: 40px;
+    }
+  }
+  h4{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+}
+.header-email{
+  margin-top: 15px;
+  input{
+    width: 500px;
+    height: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    margin-right: 7px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    @include responsive($breakpoint-small){
+      width: 100%;
+    }
+  }
+  button{
+    @include button-style;
+    font-size: $font-size-medium;
+  }
+}
