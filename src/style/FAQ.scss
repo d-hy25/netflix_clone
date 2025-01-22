@@ -2,6 +2,7 @@
   @include component_size;
   h2{
     margin-bottom: 10px;
+    font-size: $font-size-large;
   }
 }
 .faq-list{
@@ -10,14 +11,17 @@
     margin: 10px 0;
   }
   button{
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 30px 20px;
+    padding: 25px 20px;
     text-align: left;
     font-size: $font-size-medium;
     background-color: rgb(45,45,45);
     color: $txt-color;
     transition: 0.3s;
+    position: relative;
     &:hover{
       background-color: rgb(87, 87, 87);
     }
@@ -25,6 +29,13 @@
   p{
     font-size: $font-size-medium;
     background-color: rgb(45,45,45);
-    padding: 24px;
+    height: 0;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  p.open{
+    height: 150px;
+    padding: 10px 0;
+    opacity: 1;
   }
 }

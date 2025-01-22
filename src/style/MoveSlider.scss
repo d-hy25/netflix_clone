@@ -1,0 +1,81 @@
+.move-slider{
+  @include component_size;
+  position: relative;
+  h2{
+    font-size: $font-size-large;
+  }
+  div{
+    select{
+      padding: 7px 20px;
+      margin: 20px 20px 30px 0;
+      background-color: transparent;
+      color: $txt-color;
+      border-radius: 5px;
+      option{
+        background-color: #fff;
+        color: #000;
+      }
+    }
+  }
+  //기본 화살표에 가상 요소 삭제
+  .slick_prev:before,
+  .slick_next:before{
+    content: "";
+  }
+  .slick_prev,
+  .slick_next{
+    background-color: rgba(0,0,0,0.7);
+    width: 30px;
+    height: 120px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    text-align: center;
+    line-height: 120px;
+    font-size: $font-size-medium;
+    cursor: pointer;
+    &:hover{
+      background-color: rgba(255,255,255,0.3);
+    }
+  }
+  .slick_prev{
+    left: -50px;
+  }
+  .slick_next{
+    right: -50px;
+  }
+  .movie-card{
+    margin: 10px 0;
+    transition: 0.3s;
+    position: relative;
+    z-index: 20;
+    &:hover{
+      transform: scale(1.05);
+    }
+    img{
+      width: 80%;
+      height: 90%;
+      margin: 0 auto;
+      border-radius: 10px;
+      align-items: center;
+    }
+    p{
+      position: absolute;
+      bottom: 30px;
+      font-size: 150px;
+      font-weight: bolder;
+      color: #000;
+      // -webkit-text-stroke: 2px #fff;
+      // -webkit-text-fill-color: #000;
+      color: #000;
+      text-shadow: -2px -2px #fff, //왼쪽 위
+                  2px -2px #fff,  //오른쪽 위
+                  -2px 2px #fff, //왼쪽 아래
+                  2px 2px #fff;  //오른쪽 아래
+      
+    }
+  }
+}
+

@@ -1,0 +1,42 @@
+footer{
+  @include component_size;
+  a,.f-txt{
+    color: #aaa;
+    font-size: $font-size-small;
+  }
+  p{
+    color: #aaa;
+  }
+  .f-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin: 50px 0;
+    @include responsive($breakpoint-medium){
+      grid-template-columns: repeat(2,1fr);
+    }
+    @include responsive($breakpoint-small){
+      grid-template-columns: repeat(1,1fr);
+    }
+  }
+  .f-txt{
+    margin-top: 50px;
+    a{
+      font-weight: bold;
+    }
+  }
+}
+.f-select{
+  margin-bottom: 50px;
+  select{
+    padding: 7px 20px;
+    margin-right: 10px;
+    background-color: transparent;
+    color: $txt-color;
+    border-radius: 5px;
+    option{
+      background-color: #fff;
+      color: #000;
+    }
+  }
+}
