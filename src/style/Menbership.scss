@@ -1,14 +1,21 @@
 header.membership{
   width: 30%;
 }
+
 .membership{
   @include component_size;
   text-align: center;
+  @include responsive($breakpoint-small){
+    p{text-align: left;}
+  }
 }
 .header-email{
   margin: 20px auto;
   position: relative;
   display: flex;
+  @include responsive($breakpoint-small){
+    display: block;
+  }
   label{
     position: absolute;
     color: #aaa;
@@ -16,6 +23,10 @@ header.membership{
     transform: translateY(-50%);
     left: 15px;
     transition: 0.3s;
+    @include responsive($breakpoint-small){
+      position: absolute;
+      top:25px;
+    }
   }
   &.focused{
     label{
@@ -49,5 +60,11 @@ header.membership{
       font-size: $font-size-small;
       display: block;
     }
+    @include responsive($breakpoint-small){
+      font-size: 18px;
+      padding: 15px 20px;
+      margin: 20px auto;
+    }
+    
   }
 }

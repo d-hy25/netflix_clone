@@ -3,26 +3,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { VscChevronRight } from "react-icons/vsc";
 import { VscChevronLeft } from "react-icons/vsc";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
+const movies = [
+  {id:1, title:"첫번째",image:"../images/img1.webp", tag:"최신등록", text:1},
+  {id:2, title:"두번째",image:"../images/img2.webp", tag:"최신등록", text:2},
+  {id:3, title:"세번째",image:"../images/img3.webp", tag:"최신등록", text:3},
+  {id:4, title:"네번째",image:"../images/img4.webp", tag:"최신등록", text:4},
+  {id:5, title:"다섯번째",image:"../images/img5.webp", tag:"최신등록", text:5},
+  {id:6, title:"여섯번째",image:"../images/img6.webp", tag:"최신등록", text:6},
+  {id:7, title:"일곱번째",image:"../images/img7.webp", tag:"최신등록", text:7},
+  {id:8, title:"여덟번째",image:"../images/img8.webp", tag:"최신등록", text:8},
+  {id:9, title:"아홉번째",image:"../images/img9.webp", tag:"최신등록", text:9},
+  {id:10, title:"열번째",image:"../images/img10.webp", tag:"최신등록", text:10}
+];
 const MoveSlider = () => {
-  const [movies,setMovies] = useState([]);
-  const [error,setError] = useState(null);
-  const fetchMovies = async ()=>{
-    const API_KEY="decc67e8f617c228c9c976bb05cd39ca";
-    const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=ko-KR&page=1`;
-
-    try{
-      const response = await axios.get(url);
-      setMovies(response.data.results.slice(0,10));
-    }catch(err){
-      setError("영화 데이터를 가져오는 중 오류 발생");
-    }
-  }
-  useEffect(()=>{
-    fetchMovies();
-  },[]);
   const settings = {
     dots: false,
     infinite: false,
@@ -42,8 +36,7 @@ const MoveSlider = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToShow: 2
         }
       },
       {
@@ -79,8 +72,8 @@ const MoveSlider = () => {
       <h2>지금 뜨는 콘텐츠</h2>
         <div>
           <select>
-            <option>대한민국</option>
-            <option>글로벌</option>
+            <option>한국어</option>
+            <option>English</option>
           </select>
           <select>
             <option>영화</option>
@@ -89,10 +82,9 @@ const MoveSlider = () => {
         </div>
       <Slider {...settings}>
       {
-        movies.map((list,idx)=>{
+        movies.map((list)=>{
           return <div className="movie-card" key={list.id}>
-            <span>{idx+1}</span>
-            <img src={`https://image.tmdb.org/t/p/w342${list.poster_path}`} alt={list.title}/>
+            <img src={list.image} alt={list.title}/>
             <p>{list.text}</p>
           </div>
         })

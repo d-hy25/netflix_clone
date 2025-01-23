@@ -3,6 +3,10 @@
   h2{
     margin-bottom: 10px;
     font-size: $font-size-large;
+    @include responsive($breakpoint-small){
+      font-size: 18px;
+      font-weight: 400;
+    }
   }
 }
 .faq-list{

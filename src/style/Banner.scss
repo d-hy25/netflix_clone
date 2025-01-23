@@ -7,14 +7,30 @@
   align-items: center;
   gap: 20px;
   span{
+    position: absolute;
     font-size: 50px;
+    left: -70px;
   }
   &:hover{
     transform: scale(1.05);
     filter: brightness(1.4);
   }
+  @include responsive($breakpoint-medium){
+    align-items: start;
+    width: 90%;
+  }
+  @include responsive($breakpoint-small){
+    width: 90%;
+    span{
+      left: 10px;
+      top:-10px;
+      z-index: 20;
+      font-size: 30px;
+    }
+  }
 }
 .banner-txt{
+  position: relative;
   background-image: linear-gradient(to right, #1c1c2b,#232344);
   border-radius: 10px;
   width: 80%;
@@ -22,6 +38,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include responsive($breakpoint-small){
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    button{
+      margin-top: 10px;
+    }
+  }
   .b-txt{
     p:nth-of-type(1){
     font-size: 20px;

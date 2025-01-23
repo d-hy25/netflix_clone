@@ -3,6 +3,10 @@
   margin-bottom: 50px;
   h2{
     font-size: $font-size-large;
+    @include responsive($breakpoint-small){
+      font-size: 18px;
+      font-weight: 400;
+    }
   }
   ul{
     display: flex;

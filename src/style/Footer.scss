@@ -1,5 +1,6 @@
 footer{
   @include component_size;
+  margin-bottom: 50px;
   a,.f-txt{
     color: #aaa;
     font-size: $font-size-small;

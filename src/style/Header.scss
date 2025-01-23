@@ -54,6 +54,9 @@ nav{
     font-weight: 400;
     margin-bottom: 30px;
   }
+  @include responsive($breakpoint-medium){
+    width: 100%;
+  }
 }
 .header-email{
   margin-top: 15px;

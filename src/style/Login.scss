@@ -1,0 +1,148 @@
+.login{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: 
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url(../../public/images/nexflix-bg.png);
+  *{
+    margin: 15px 0;
+    font-size: 16px;
+  }
+  label, input, span, button{
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+  }
+  .close{
+    position: absolute;
+    right: 20px;
+    top: 0;
+    cursor: pointer;
+    color: #888;
+    &:hover{
+      color: #fff;
+    }
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  h2{
+    font-size: $font-size-large;
+    margin-bottom: 30px;
+  }
+}
+.login-popup{
+  position: relative;
+  width: 450px;
+  height: 700px;
+  padding: 30px 60px;
+  background-color: rgba(0,0,0,0.7); 
+  border-radius: 5px;
+  a{      
+    &:hover{
+    text-decoration: underline;
+    }
+  }
+  p:nth-last-child(3){
+    color: #aaa;
+  }
+  p:nth-last-child(2){
+    color: #aaa;
+    a{
+      color: #fff;
+    }
+  }
+  p:nth-last-child(1){
+    font-size: $font-size-small;
+    color: #aaa;
+    a{
+    color: blue;
+    font-size: $font-size-small;
+    }
+  }
+  input{
+    padding: 15px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid #fff;
+    color: #fff;
+    &:focus{
+      box-shadow: 0 0 3px #fff;
+      // box-shadow: -2px -2px #fff, //왼쪽 위
+      //             2px -2px #fff,  //오른쪽 위
+      //             -2px 2px #fff, //왼쪽 아래
+      //             2px 2px #fff; 
+    }
+  }
+  button:nth-of-type(1){
+    @include button-style;
+  }
+  button:nth-of-type(2){
+    @include button-style;
+    background-color: rgba(255,255,255,0.3);
+  }
+  form{
+    label{
+      position: relative;
+    &.focused{
+        span{
+          top: 10px;
+          font-size: 10px;
+        }
+      }
+      &.error{
+        input{
+          border: 1px solid #f00;
+          &:focus{
+            border: 1px solid #fff;
+          }
+        }
+      }
+    }
+    input{
+      position: relative;
+    }
+    span{
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 15px;
+      transition: 0.3s;
+    }
+    p{
+      text-align: center;
+    }
+    a{
+      display: block;
+      text-align: center;
+    }
+  }
+  .login-check{
+    span{
+      display: inline-block;
+      width: auto;
+      margin-left: 10px;
+    }
+    input{
+      display: inline-block;
+      box-shadow: none;
+      accent-color: #fff;
+      width: 20px;
+      margin: 0;
+      transform: scale(1.5);
+      outline: none;
+      &:hover{
+        filter: brightness(0.6);
+      }
+    }
+  }
+  .email-error{
+    color: $primary-color;
+    font-size: $font-size-small;
+    text-align: left;
+  }
+}

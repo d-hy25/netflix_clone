@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import Membership from "./Membership";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <header>
@@ -11,7 +13,9 @@ const Header = () => {
               <option>한국어</option>
               <option>English</option>
             </select>
-            <button>로그인</button>
+            <button onClick={()=>{
+              navigate("/Login");
+            }}>로그인</button>
           </div>
         </nav>
         <div className="header-contents">
@@ -19,7 +23,6 @@ const Header = () => {
           <h4><b>5,500원</b>으로 시작하세요. 멤버쉽은 언제든지 해지 가능합니다.</h4>
           <Membership/>
         </div>
-        
       </header>
     </div>
   );
