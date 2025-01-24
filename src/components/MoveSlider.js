@@ -9,6 +9,7 @@ import axios from "axios";
 const MoveSlider = () => {
   const [movies,setMovies] = useState([]);
   const [error,setError] = useState(null);
+  const [loading,setLoading] = useState(false);
   const fetchMovies = async ()=>{
     const API_KEY="decc67e8f617c228c9c976bb05cd39ca";
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=ko-KR&page=1`;
@@ -16,11 +17,14 @@ const MoveSlider = () => {
     try{
       const response = await axios.get(url);
       setMovies(response.data.results.slice(0,10));
+      setLoading(false);
     }catch(err){
       setError("영화 데이터를 가져오는 중 오류 발생");
+      setLoading(false);
     }
   }
   useEffect(()=>{
+    setLoading(true);
     fetchMovies();
   },[]);
   const settings = {
@@ -36,7 +40,8 @@ const MoveSlider = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3
+          slidesToShow: 3,
+          initialSlide: 0
         }
       },
       {
@@ -74,6 +79,13 @@ const MoveSlider = () => {
     );
   }
   
+  if(error){
+    return<div>{error}</div>
+  }
+  if(loading){
+    return<div>Loading.....</div>
+  }
+
   return (
     <div className="move-slider">
       <h2>지금 뜨는 콘텐츠</h2>
