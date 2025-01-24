@@ -16,8 +16,11 @@ nav{
     width: 95%;
   }
   h1{
-    color: $primary-color;
-    font-size: $font-size-large;
+    img{
+      width: 200px;
+    }
+    // color: $primary-color;
+    // font-size: $font-size-large;
   }
   div{
     select{
