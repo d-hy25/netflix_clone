@@ -135,9 +135,9 @@
       margin: 0;
       transform: scale(1.5);
       outline: none;
-      &:hover{
-        filter: brightness(0.6);
-      }
+      // &:hover{
+      //   filter: brightness(0.6);
+      // }
     }
   }
   .email-error{
